@@ -3,6 +3,8 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
+                sh "echo $MAVEN_HOME"
+                sh "echo $PATH"
                 sh 'mvn -f java-tomcat-sample-docker/pom.xml clean package'
             }
             post {
